@@ -1,1 +1,1 @@
-import { csv } from "../d3.client.js";
+import { csv } from "../d3.client/client.js";

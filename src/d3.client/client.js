@@ -6,7 +6,7 @@ const request = await fetch('http://localhost:8081/aircraft_incidents.csv');
 const text = await request.text();
 
 /**
- * @type {import("d3").DSVParsedArray<import(".").AircraftIncident>}
+ * @type {import("d3").DSVParsedArray<import("..").AircraftIncident>}
  */
 export const csv = d3.csvParse(text, d3.autoType);
 
