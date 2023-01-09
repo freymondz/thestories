@@ -1,0 +1,23 @@
+{
+  "name": "thestories",
+  "version": "1.0.0",
+  "description": "Learning how to use D3.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "python3 -m http.server 8081"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freymondz/thestories.git"
+  },
+  "author": "Zachary Zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freymondz/thestories/issues"
+  },
+  "homepage": "https://github.com/freymondz/thestories#readme",
+  "dependencies": {
+    "d3": "^7.8.0"
+  }
+}
