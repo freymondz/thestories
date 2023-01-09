@@ -1,4 +1,4 @@
-import { csv, GroupedBarChart, Legend, d3 } from './d3.client.js';
+import { csv, GroupedBarChart, Legend, d3 } from '../d3.client.js';
 
 const types = ['Total_Fatal_Injuries', 'Total_Serious_Injuries', 'Total_Uninjured'];
 

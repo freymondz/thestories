@@ -2,7 +2,7 @@ interface Global {
     d3: typeof import('d3');
 }
 
-export interface  AircraftIncident extends Object<string, any> {
+export interface  AircraftIncident {
     Accident_Number: string;
     Air_Carrier: string;
     Aircraft_Damage: string;

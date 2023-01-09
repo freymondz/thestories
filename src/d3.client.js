@@ -1,5 +1,5 @@
 // https://griffa.dev/posts/type-checking-global-javascript-libraries-in-vs-code-for-when-you-just-want-learn-and-code./
-/// <reference path="index.d.ts" />
+/// <reference path="./index.d.ts" />
 export const d3 = window.d3;
 
 const request = await fetch('http://localhost:8081/aircraft_incidents.csv');
