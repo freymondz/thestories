@@ -1,7 +1,3 @@
-interface Global {
-    d3: typeof import('d3');
-}
-
 export interface  AircraftIncident {
     Accident_Number: string;
     Air_Carrier: string;

@@ -1,11 +1,12 @@
-import { csv, d3, LineChart } from "../d3.client/client.js";
+import { csv, LineChart } from "../d3.client/client.js";
+import { rollup } from 'd3';
 
 const dates = csv.map(d => new Date(d.Event_Date))
     .sort((a, b) => a.getTime() - b.getTime());
 
 
 const data = Array.from(
-    d3.rollup(
+    rollup(
         dates,
         v => v.length,
         d => d.getFullYear()

@@ -1,4 +1,5 @@
-import { csv, GroupedBarChart, Legend, d3 } from '../d3.client/client.js';
+import { csv, GroupedBarChart, Legend } from '../d3.client/client.js';
+import { sum, groupSort } from 'd3';
 
 const types = ['Total_Fatal_Injuries', 'Total_Serious_Injuries', 'Total_Uninjured'];
 
@@ -25,9 +26,9 @@ const node = GroupedBarChart(data, {
     z: d => d.type,
     zDomain: types,
     yLabel: "Passengers",
-    xDomain: d3.groupSort(
+    xDomain: groupSort(
         data,
-        D => d3.sum(D, d => -d.Passengers),
+        D => sum(D, d => -d.Passengers),
         d => d.Make)
 });
 

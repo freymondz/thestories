@@ -4,19 +4,18 @@ Learning how to use `D3.js` to create static visualization. I mostly just used t
 
 ## D3.js and Node.js
 
-Due to the nature of JavaScript and the disparate standardization of everything between `Node.js` and the browsers valid JavaScript in `Node.js` is not always valid in the browser. Getting proper IDE support for `D3.js` is very annoying.
+By using `d3.js` in a Node.js environment, we get intellisense and types, making it easier to learn how to use the library. Unfortunately, to import `d3.js` in Node.js we use bare imports like `import * as d3 from 'd3'`. However the browser doesn't recognize bare imports. We can use [import maps](https://uploadcare.com/blog/import-maps-101/) to help the browser recognize the imports.
 
-We can import `D3.js` using the `<script>` tag and embed JavaScript in HTML but that means no Intellisense. Installing `D3.js` with `NPM` gives us Intellisense but the import system used by `D3.js` is not compatiable with how the browser imports external libraries. We can use rollup or any other JavaScript bundler but that seems incredibly overkill for a simple project.
+Place this HTML in the `<head>` of your HTML file before you define your `index.js`.
 
-However we can take advantage of the fact that VSCode comes bundled with TypeScript. We can create a `index.d.ts` file that acts as a proxy for the types exposed by `D3.js`. This allows us to get Intellisense and type checking in VSCode without having to use a bundler.
-
-By adding this to the top of the JavaScript file we're working on we can get Intellisense and type checking.
-
-```js
-/// <reference path="index.d.ts" />
-const d3 = window.d3;
+```html
+<script type="importmap">
+    {
+        "imports": {
+            "d3": "https://cdn.jsdelivr.net/npm/d3@7/+esm"
+        }
+    }
+</script>
 ```
 
-[Souce](https://griffa.dev/posts/type-checking-global-javascript-libraries-in-vs-code-for-when-you-just-want-learn-and-code./)
-
-Make sure to still be importing `D3.js` in HTML using the `<script>` tag.
+Do be aware that [Safari](https://caniuse.com/import-maps) does not currently support this feature in its general release version.

@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Three Stories</title>
-    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "d3": "https://cdn.jsdelivr.net/npm/d3@7/+esm"
+            }
+        }
+    </script>
     <script src="src/index.js" type="module"></script>
 </head>
 <body>
