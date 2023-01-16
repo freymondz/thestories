@@ -1,5 +1,7 @@
-import { csv, LineChart } from "../d3.client/client.js";
+import { LineChart } from "../d3.client/client.js";
 import { rollup } from 'd3';
+
+import { csv } from '../../data/index.js';
 
 const dates = csv.map(d => new Date(d.Event_Date))
     .sort((a, b) => a.getTime() - b.getTime());
